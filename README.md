@@ -1,6 +1,6 @@
-# Agentic Misalignment Research Framework
+# TrustWorthy of Reasoning Language models  Research Framework
 
-A research framework for using fictional scenarios to study the potential for agentic misalignment behavior in frontier language models, including blackmail and information leakage.
+A research framework for using fictional scenarios to study the trustworthiness  behavior in frontier reasoning language models, 
 
 ## 🚀 Quick Start
 
