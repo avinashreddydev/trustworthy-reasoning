@@ -33,7 +33,7 @@ def create_condition_id(stereotype_topic: str, target_group: str, system_prompt_
     # Clean target group name for file system
     clean_target_group = re.sub(r'[^\w\-_]', '_', target_group.lower())
     clean_topic = re.sub(r'[^\w\-_]', '_', stereotype_topic.lower())
-    return f"stereotype_{clean_topic}_{clean_target_group}_{system_prompt_type}_{index:04d}"
+    return f"stereotype_{system_prompt_type}_{index:04d}"
 
 def generate_stereotype_prompts(output_dir: Path = None):
     """Generate stereotype prompts similar to the main experiment framework."""
