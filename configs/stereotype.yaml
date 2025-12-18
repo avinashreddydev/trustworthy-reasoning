@@ -1,0 +1,42 @@
+# Experiment identification
+experiment_id: "stereotype_experiment_20251202_031426"
+description: "Stereotype bias experiment"
+researcher: "Avinash Reddy"
+
+# Global execution settings (apply to all expansions)
+global:
+  # Models to use for all expansions (unless overridden locally)
+  models:
+    - "Qwen/Qwen3-8B"                   # Primary model for testing
+  
+  # Temperature for model inference (required)
+  temperature: 1.0
+  
+  # Resource allocation - provider-level limits to control API usage
+  concurrency:
+    providers:
+      anthropic: 10    # Max 10 concurrent calls to any Claude model
+      openai: 100      # Max 100 concurrent calls to any GPT model  
+      google: 100      # Max 100 concurrent calls to any Gemini model
+      vllm: 100      # Max 100 concurrent calls to any VLLM model
+    
+    models:
+      "Qwen/Qwen3-8B": 5    # Max 5 of the 10 VLLM slots
+  
+  # Default sampling
+  samples_per_condition: 1
+  
+
+# Classification configuration  
+classification:
+  enabled: false
+  models:
+    stereotype: "stereotype_classifier"
+
+# Execution options
+execution:
+  resume_interrupted: true
+  timeout_seconds: 180
+  retries: 1
+  checkpoint_frequency: 5  # Save state every 5 samples
+  
